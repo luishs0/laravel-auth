@@ -1,1 +1,30 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+// HEADER -------------------------
+// navbar
+.ms_navbar {
+    background-color: #212121;
+}
+
+.ms_sidebar {
+    background-color: #484848;
+}
+
+.ms_admin-content {
+    background-color: #9e9e9e;
+}
+
+@media screen and (min-width: 768px) {
+    .ms_admin-content {
+        width: calc(100vw - 170px);
+    }
+
+    .ms_sidebar {
+        width: 155px;
+    }
+
+}
+
+.ms_card-container {
+    background-color: #eeeeee;
+}
