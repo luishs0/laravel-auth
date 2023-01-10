@@ -2,16 +2,18 @@
 
 // HEADER -------------------------
 // navbar
+
+
 .ms_navbar {
     background-color: #212121;
 }
 
 .ms_sidebar {
-    background-color: #484848;
+    background-color: #212121;
 }
 
 .ms_admin-content {
-    background-color: #9e9e9e;
+    background-color: #484848;
 }
 
 @media screen and (min-width: 768px) {
@@ -20,11 +22,19 @@
     }
 
     .ms_sidebar {
-        width: 155px;
+        width: 170px;
     }
 
 }
 
 .ms_card-container {
     background-color: #eeeeee;
+}
+
+.btn-crud-1,
+.btn-crud-2,
+.btn-crud-3 {
+    @media screen and (max-width: 826px) {
+        width: 100%;
+    }
 }

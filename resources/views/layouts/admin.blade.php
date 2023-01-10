@@ -27,7 +27,9 @@
             <div class="row justify-content-between">
                 <a class="navbar-brand ms-3 col-md-3 col-lg-2 me-0 px-3" href="/"> <i
                         class="fa-solid fa-book"></i>
-                    BoolFolio</a>
+
+                    <span class="d-none d-sm-inline-block">BoolFolio</span>
+                </a>
                 <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
                     data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
                     aria-expanded="false" aria-label="Toggle navigation">
