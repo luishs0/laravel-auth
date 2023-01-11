@@ -16,17 +16,6 @@
     background-color: #484848;
 }
 
-@media screen and (min-width: 768px) {
-    .ms_admin-content {
-        width: calc(100vw - 170px);
-    }
-
-    .ms_sidebar {
-        width: 170px;
-    }
-
-}
-
 .ms_card-container {
     background-color: #eeeeee;
 }
@@ -34,7 +23,7 @@
 .btn-crud-1,
 .btn-crud-2,
 .btn-crud-3 {
-    @media screen and (max-width: 826px) {
+    @media screen and (max-width: 905px) {
         width: 100%;
     }
 }

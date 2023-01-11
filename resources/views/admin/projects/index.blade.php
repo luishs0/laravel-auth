@@ -4,7 +4,9 @@
     <div class="container mt-4">
         <h3 class="text-center text-white mb-4">Progetti</h3>
         <div class="">
+            <a href="{{ route('admin.projects.create') }}" class="btn btn-light mb-3">Nuovo progetto</a>
             <div class="d-flex justify-content-center">
+
                 <table class="table ms_table-projects text-white">
                     <thead class="">
                         <tr>
