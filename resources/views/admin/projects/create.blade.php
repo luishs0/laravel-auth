@@ -1,20 +1,34 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container text-white mt-3">
-        <h1>Nuovo progetto</h1>
+    <div class="container text-white mt-5 d-flex flex-column justify-content-center">
+        <h1 class="text-center mb-5">Nuovo progetto</h1>
 
-        <div class="row">
+        <div class="row justify-content-center">
+
             <div class="col-10">
-                <form action="{{ route('admin.projects.store') }}" method="POST">
+
+                @if ($errors->any())
+                    <div class="ms_errors">
+
+                        @foreach ($errors->all() as $error)
+                            <span class="mt-2 mb-4 bg-danger p-2 rounded-4">{{ $error }}</span>
+                            <br>
+                        @endforeach
+
+                    </div>
+                @endif
+
+                <form action="{{ route('admin.projects.store') }}" method="POST" class="mt-4">
                     @csrf
 
-                    <div class="form-group mb-3">
+                    <div class="form-group mb-5">
                         <label for="title">Name</label>
-                        <input type="text" id="title" name="title" class="form-control" value="{{ old('title') }}">
+                        <input type="text" id="title" name="title" class="form-control"
+                            value="{{ old('title') }}">
                     </div>
 
-                    <div class="form-group mb-3">
+                    <div class="form-group mb-5">
                         <label for="description">Description</label>
                         <textarea type="text" id="description" name="description" class="form-control">{{ old('description') }}</textarea>
                     </div>
