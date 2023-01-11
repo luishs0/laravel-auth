@@ -29,9 +29,15 @@
                                         href="{{ route('admin.projects.edit', $project->slug) }}">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a>
-                                    <a class="btn btn-danger btn-crud-3 mt-1" href="">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
+                                    <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST"
+                                        class="btn-crud-3">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger mt-1 btn-crud-3">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
+
                                 </td>
                             </tr>
                         @endforeach

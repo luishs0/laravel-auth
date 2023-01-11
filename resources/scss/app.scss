@@ -21,11 +21,16 @@
 }
 
 .btn-crud-1,
-.btn-crud-2,
-.btn-crud-3 {
-    @media screen and (max-width: 905px) {
+.btn-crud-2 {
+    width: 48%;
+
+    @media screen and (max-width: 992px) {
         width: 100%;
     }
+}
+
+.btn-crud-3 {
+    width: 100%;
 }
 
 .errors {
