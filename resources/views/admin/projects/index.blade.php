@@ -25,7 +25,8 @@
                                         href="{{ route('admin.projects.show', $project->slug) }}">
                                         <i class="fa-solid fa-eye"></i>
                                     </a>
-                                    <a class="btn btn-warning btn-crud-2 mt-1" href="">
+                                    <a class="btn btn-warning btn-crud-2 mt-1"
+                                        href="{{ route('admin.projects.edit', $project->slug) }}">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a>
                                     <a class="btn btn-danger btn-crud-3 mt-1" href="">
