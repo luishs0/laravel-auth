@@ -19,13 +19,18 @@
                     </div>
                 @endif
 
-                <form action="{{ route('admin.projects.store') }}" method="POST" class="mt-4">
+                <form action="{{ route('admin.projects.store') }}" method="POST" class="mt-4" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group mb-5">
                         <label for="title">Name</label>
                         <input type="text" id="title" name="title" class="form-control"
                             value="{{ old('title') }}">
+                    </div>
+
+                    <div class="form-group mb-5">
+                        <label for="cover_image">Img</label>
+                        <input type="file" name="cover_image" id="cover_image" class="form-control">
                     </div>
 
                     <div class="form-group mb-5">

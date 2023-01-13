@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -40,6 +41,12 @@ class ProjectController extends Controller
     {
         $form_data = $request->validated();
         $form_data['slug'] = Project::generateSlug($form_data['title']);
+
+        if ($request->hasFile('cover_image')) {
+            $path = Storage::put('project_images', $request->cover_image);
+            $form_data['cover_image'] = $path;
+        }
+
         $post = Project::create($form_data);
         return redirect()->route('admin.projects.index');
     }
@@ -77,6 +84,16 @@ class ProjectController extends Controller
     {
         $form_data = $request->all();
         $form_data['slug'] = Project::generateSlug($form_data['title']);
+
+        if ($request->hasFile('cover_image')) {
+            // Cancellare l'immagine precedente se esiste
+            if ($project->cover_image) {
+                Storage::delete($project->cover_image);
+            }
+            $path = Storage::put('project_images', $request->cover_image);
+            $form_data['cover_image'] = $path;
+        }
+
         $project->update($form_data);
 
         return redirect()->route('admin.projects.index');
